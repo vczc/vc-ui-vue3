@@ -6,5 +6,13 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     host: '0.0.0.0'
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/styles/mixin.scss";`
+      }
+    }
   }
+  // lintOnSave: false
 })

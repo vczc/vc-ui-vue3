@@ -1,0 +1,21 @@
+$namespace: 'vc';
+$state_prefix: 'is_';
+
+$--header-padding: 0 20px !default;
+$--footer-padding: 0 20px !default;
+$--main-padding: 20px !default;
+
+@mixin create($block) {
+  $VB: $namespace + '_' + $block !global;
+  .#{$VB} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state_prefix + $state} {
+      @content;
+    }
+  }
+}
